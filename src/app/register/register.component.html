@@ -1,0 +1,69 @@
+<div class="container">
+  <form [formGroup]="formReg" (ngSubmit)="sendToApi() "  >
+    <div class="form-group">
+      <label for="fn">Frist Name</label>
+      <input type="text" class="form-control" id="fn" aria-describedby="emailHelp" placeholder="Enter Frist Name" formControlName ="Name">
+
+      <div *ngIf="Name?.invalid  && (Name?.touched || Name?.dirty)">
+        <small *ngIf="Name?.errors?.['required']">Please Enter your Frist Name</small>
+        <small *ngIf="Name?.errors?.['pattern']">Your Name Must more than three letter</small>
+      </div>
+    </div>
+
+    <!-- <div class="form-group">
+      <label for="ln">Last Name</label>
+      <input type="text" class="form-control" id="ln" aria-describedby="emailHelp" placeholder="Enter Last Name" formControlName ="lastName">
+      <div *ngIf="lastName?.invalid && (lastName?.touched || lastName?.dirty)">
+        <small *ngIf="lastName?.errors?.['required']">Please Enter your last Name</small>
+        <small *ngIf="lastName?.errors?.['pattern']">Your Name Must more than three letter</small>
+      </div>
+    </div> -->
+
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"  formControlName ="Email">
+      <div *ngIf="Email?.invalid &&(Email?.touched || Email?.dirty)">
+        <small *ngIf="Email?.errors?.['required']">Please enter Email </small>
+        <small *ngIf="Email?.errors?.['pattern'] ">Please enter correct email</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="pass">Password</label>
+      <div class="position-relative">
+        <input type="password" class="form-control" id="pass" #ele aria-describedby="emailHelp" placeholder="Enter Password" formControlName ="Password">
+        <i class="fa-solid position-absolute eyeIcon" (click)="iconClick(ele)"
+        [class.fa-eye] = "! iClick"
+        [class.fa-eye-slash]="iClick"
+        ></i>
+      </div>
+      <div *ngIf="Password?.invalid &&(Password?.touched || Password?.dirty)">
+        <small *ngIf="Password?.errors?.['required']">You must enter password</small>
+        <small *ngIf="Password?.errors?.['minlength']">Password must be at least six characters or numbers</small>
+      </div>
+    </div>
+
+
+    <div class="alert bg-danger" *ngIf="errroMessage" >{{errroMessage}}</div>
+
+    <div class="w-100 d-flex justify-content-end mt-4" >
+      <button type="submit" class="btn btn-primary" [disabled]="formReg.invalid" >
+        <div *ngIf="isloading"><i class="fas fa-spinner fa-spin"></i></div>
+        <div *ngIf="!isloading">submit</div>
+      </button>
+    </div>
+  </form>
+</div>
+<div>
+  <a
+    name=""
+    id=""
+    class="btn btn-primary"
+    routerLink="/logIn"
+
+    >I have an account</a
+  >
+
+</div>
+{{formReg.value | json}}
+

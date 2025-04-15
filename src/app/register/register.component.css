@@ -1,0 +1,6 @@
+.eyeIcon{
+  right: 17px;
+  top: 50%;
+  z-index: 66;
+  transform: translate(0, -50%);
+}

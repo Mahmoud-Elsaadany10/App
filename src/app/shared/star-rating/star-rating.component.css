@@ -1,0 +1,16 @@
+.stars {
+  display: flex;
+  cursor: pointer;
+}
+
+.fa-star {
+  font-size: 2rem;
+  color: gold;
+  transition: color 0.3s;
+}
+.far {
+  color: gray; /* Empty star */
+}
+.fa-star-half-alt {
+  color: gold;
+}

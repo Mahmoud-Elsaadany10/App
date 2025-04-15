@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="d-flex justify-content-center  py-4 cont" >
+    <label for="typeahead-format" style="margin-right: 10px;">Search by First Name:</label>
+    <div class="position-relative" style="height: 29px;">
+      <input id="typeahead-format" class="position-relative" (click)="showButton()" [(ngModel)]="firstName">
+      <button [hidden]="hide" class="x" (click)="onClickButton()"><i class="fa-solid fa-x"></i></button>
+    </div>
+    <button class="btn btn-primary ms-2" (click)="onSearch()">Search</button>
+  </div>
+
+  <table class="table table-striped container">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of filteredUsers; let i = index">
+        <th scope="row">{{ (page - 1) * pageSize + i + 1 }}</th>
+        <td>{{ item.firstName }}</td>
+        <td>{{ item.lastName }}</td>
+        <td>{{ item?.age }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-center py-3">
+    <ngb-pagination
+      [(page)]="page"
+      [pageSize]="pageSize"
+      [collectionSize]="totalUsers"
+      [maxSize]="dynamicMaxSize"
+      (pageChange)="onPageChange($event)">
+    </ngb-pagination>
+  </div>
+</div>

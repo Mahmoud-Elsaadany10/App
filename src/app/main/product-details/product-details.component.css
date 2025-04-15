@@ -1,0 +1,10 @@
+.btn-close {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.bt:hover{
+  background-color: #ff1212;
+  color: white;
+}

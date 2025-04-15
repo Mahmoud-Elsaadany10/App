@@ -1,0 +1,16 @@
+.eyeIcon{
+  right: 17px;
+  top: 50%;
+  z-index: 66;
+  transform: translate(0, -50%);
+}
+
+.toast-an{
+  position: fixed;
+  top: 100px; /* Adjust the top position as needed */
+  right: 20%;
+  transform: translateX(-50%);
+  z-index: 1000; /* Ensure the toast is above other content */
+  background-color: rgb(129, 11, 76);
+  color: white;
+}

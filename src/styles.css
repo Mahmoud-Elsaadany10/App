@@ -1,0 +1,93 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+.medium-top-modal .modal-dialog {
+  position: fixed;
+  top: 50px; /* Adjust the top position as needed */
+  right:  30%;
+  transform: translateX(-50%);
+  width: 40%; /* Adjust width if needed */
+}
+
+.medium-top-modal .modal-content {
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure the pagination has no shadow */
+.pagination .page-item .page-link {
+  background-color: white !important;
+  color: black !important;
+  border: 1px solid #dee2e6 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Remove hover effect for all buttons */
+.pagination .page-item .page-link:hover {
+  background-color: rgb(92, 75, 172) !important; /* Change if needed */
+  color: white !important;
+  box-shadow: none !important;
+}
+
+/* Remove focus outline */
+.pagination .page-item .page-link:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Disable active styles for "Prev" button */
+.pagination .page-item:first-child .page-link {
+  background-color: white !important;
+  color: black !important;
+  border: 1px solid #dee2e6 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Remove hover effect for "Prev" */
+.pagination .page-item:first-child .page-link:hover,
+.pagination .page-item:last-child .page-link:hover {
+  background-color: white !important;
+  color: black !important;
+  box-shadow: none !important;
+}
+
+/* Remove focus effect for "Prev" */
+.pagination .page-item:first-child .page-link:focus,
+.pagination .page-item:last-child .page-link:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Prevent "Prev" from appearing active */
+.pagination .page-item:first-child.active .page-link,
+.pagination .page-item:last-child.active .page-link{
+  background-color: white !important;
+  color: black !important;
+  border-color: #dee2e6 !important;
+  box-shadow: none !important;
+}
+
+/* Ensure the active page looks distinct */
+.pagination .page-item.active .page-link {
+  background-color: rgb(92, 75, 172) !important;
+  color: white !important;
+  border-color: #5c4bac !important;
+  box-shadow: none !important;
+}
+
+/* Ensure disabled buttons don't have focus or shadow */
+.pagination .page-item.disabled .page-link {
+  background-color: #f8f9fa !important;
+  color: #6c757d !important;
+  border-color: #dee2e6 !important;
+  box-shadow: none !important;
+  pointer-events: none !important; /* Disable clicking */
+}
+
+
+
+
+
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */

@@ -1,0 +1,35 @@
+<div class="page">
+<mat-card class="form-container">
+  <form [formGroup]="profileForm" (ngSubmit)="sendToApi()">
+    <div class = "cont row justify-content-center">
+      <div class="col-md-6 col-lg-6 ">
+    <mat-form-field appearance="outline" class="full-width p-4">
+      <mat-label>First Name</mat-label>
+      <input matInput  formControlName="firstName">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width p-4">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width p-4">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width p-4">
+      <mat-label>age</mat-label>
+      <input matInput type="number" formControlName="age">
+    </mat-form-field>
+   </div>
+    <div class="button-container d-flex justify-content-center py-2 ">
+      <button mat-raised-button color="primary" type="submit" [disabled]="isLoading">
+        <!-- <mat-spinner *ngIf="isLoading" diameter="20"></mat-spinner> -->
+        <span *ngIf="!isLoading">Submit</span>
+      </button>
+    </div>
+    </div>
+  </form>
+</mat-card>
+</div>

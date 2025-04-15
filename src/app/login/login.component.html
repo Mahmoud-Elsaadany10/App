@@ -1,0 +1,54 @@
+<div class="container">
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="form-group">
+      <label for="name">Your Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="username"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+        formControlName="username"
+      />
+      <div *ngIf="username?.invalid && (username?.touched || username?.dirty)">
+        <small *ngIf="username?.errors?.['required']">Please enter Email </small>
+        <!-- <small *ngIf="username?.errors?.['username?']">Please enter a valid email</small> -->
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="pass">Password</label>
+      <div class="position-relative">
+        <input
+          type="password"
+          class="form-control"
+          id="pass"
+          name="password"
+          #ele
+          placeholder="Enter Password"
+          formControlName="password"
+        />
+        <i
+          class="fa-solid position-absolute eyeIcon"
+          (click)="iconClick(ele)"
+          [class.fa-eye]="!iClick"
+          [class.fa-eye-slash]="iClick"
+        ></i>
+      </div>
+      <div *ngIf="password?.touched">
+        <small *ngIf="password?.errors?.['required']">You must enter password</small>
+      </div>
+    </div>
+
+    <div class="w-100 d-flex justify-content-end mt-4">
+      <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
+        <div *ngIf="isloading"><i class="fas fa-spinner fa-spin"></i></div>
+        <div *ngIf="!isloading">Submit</div>
+      </button>
+    </div>
+  </form>
+</div>
+
+
+

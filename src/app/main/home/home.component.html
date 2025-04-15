@@ -1,0 +1,102 @@
+
+<!-- <div class="d-flex  " *ngIf="products.length  > 0 else loading" > -->
+<div class="d-flex  " >
+
+  <aside class="l  p-3 col-md-2 text-center aside position-fixed" #Myaside
+  [class.hide]="Toggle" [class.show]="!Toggle">
+    <h3 class="mb-4 mt-2">categories</h3>
+    <ul class="list-unstyled" >
+     <li *ngFor="let cat of cat | slice:0:5"
+          class="mb-3"
+          style="cursor: pointer;"
+          (click)="onCategorySelect(cat.id); scrollToTop()"
+          [class.activeLi]="CatId == cat.id"
+          #element>
+        {{ cat.name }}
+      </li>
+    </ul>
+  </aside>
+
+
+<div  class="container">
+
+  <div class="main" style="margin-left: 200px;">
+
+    <div class="filter py-3 " style="margin-left: 18px;">
+      <a
+        class="btn btn-primary"
+        role="button"
+        (click)="getAllProduct() ; removeClass()"
+
+
+        >All-Product</a
+      >
+      <a
+        class="btn btn-primary"
+        role="button"
+        (click)="cheapPrice()"
+        >cheap</a
+      >
+      <a
+        class="btn btn-primary"
+        role="button"
+        (click)="ExpensivePrice()"
+        >Expensive</a
+      >
+
+    </div>
+    <div class="py-3 cont ">
+      <label class="search" for="search">Search by Product Name</label>
+      <input type="text"  id ="search" placeholder="Search" [(ngModel)]="searchTerm" (ngModelChange)="onSearchTermChange()">
+
+    </div>
+    <div class="row g-3">
+      <div class="col-md-6 col-lg-4"
+           *ngFor="let item of (products | searchProduct: searchTerm | slice: (page - 1) * pageSize : page * pageSize)">
+        <div class="p-4">
+          <app-product
+            [data]="item"
+            class="d-flex justify-content-center"
+            (sendToCart)="sendToCart($event)">
+          </app-product>
+        </div>
+      </div>
+    </div>
+
+    <ngb-pagination class="d-flex justify-content-center py-3"
+                    [(page)]="page"
+                    [pageSize]="pageSize"
+                    [collectionSize]="filteredProductsLength"
+                    [maxSize]="dynamicMaxSize"
+                    (pageChange)="onPageChange($event)">
+      <ng-template ngbPaginationPrevious class="ngt">Prev</ng-template>
+      <ng-template ngbPaginationNext class="ngt">Next</ng-template>
+    </ngb-pagination>
+
+
+  </div>
+</div>
+
+
+<!-- <ng-template #loading>
+  <div class="d-flex justify-content-center py-5">
+    <i class="fa fa-spinner fa-spin fa-3x"></i>
+  </div>
+</ng-template> -->
+
+<ngb-toast
+  *ngIf="showToast"
+  [autohide]="true"
+  [delay]="3000"
+  (hidden)="showToast = false"
+  class="toast-an"
+>
+  {{ toastMessage }} <!-- Only the toast message will be displayed -->
+</ngb-toast>
+
+<router-outlet></router-outlet>
+
+
+
+
+

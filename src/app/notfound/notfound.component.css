@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.notfound-container {
+  text-align: center;
+}
+
+.notfound-title {
+  font-size: 120px;
+  margin: 0;
+  line-height: 1;
+}
+
+.notfound-message {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.notfound-icon {
+  font-size: 60px;
+  margin: 20px 0;
+}
+
+.notfound-button {
+  background: #3498db;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.notfound-button:hover {
+  background: #2980b9;
+}

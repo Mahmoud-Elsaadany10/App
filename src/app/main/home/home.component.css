@@ -1,0 +1,119 @@
+
+aside{
+  color: white;
+  background-image: linear-gradient(87deg, rgb(255 0 198 / 50%), rgba(3, 3, 26, 0.774));
+  position: fixed; /* Makes the element fixed in place */
+  width: 200px;    /* Define a fixed width */
+  top: 65;          /* Position from the top of the viewport */
+  left: 0;         /* Position from the left side of the viewport */
+  height: 100vh;   /* Full viewport height (optional if you want full height) */
+  background-color: #f8f9fa; /* Optional background color */
+  z-index: 999;    /* Ensures it's on top of other elements */
+  padding: 20px;
+}
+aside ul li{
+  font-size: 20px;
+}
+.card a{
+  text-decoration: none;
+  color: rgb(24, 14, 14);
+}
+/* aside ul li:hover{
+  background-color: antiquewhite;
+  color: rgb(249 115 22);
+  transition: .4s;
+  border-bottom: 1px  solid ;
+} */
+
+.activeLi{
+  color: rgb(249 115 22);
+  border-bottom: 1px  solid ;
+}
+
+.filter a{
+  border-color: transparent;
+  margin-left: 10px;
+}
+
+
+
+.close-bn{
+  /* padding: calc(var(--bs-modal-header-padding-y)* .1) calc(var(--bs-modal-header-padding-x)* .1); */
+  margin: calc(-.5* var(--bs-modal-header-padding-y)) calc(-.5* var(--bs-modal-header-padding-x)) calc(-.5* var(--bs-modal-header-padding-y)) auto;
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 1.4rem;
+  color: #ff1212;
+  border-radius: 4px;
+}
+.close-bn:hover{
+  background-color: #ff1212;
+  color: white;
+}
+
+
+
+@media (max-width : 767px) {
+  .main{
+    margin: 0 !important;
+
+  }
+  .hide{
+    transform:  translate(-200px);
+    transition: .3s;
+  }
+  .show{
+    transform:  translate(0);
+    transition: .3s;
+    background-color: rgba(0, 0, 0, 0.493);
+  }
+}
+.container {
+  overflow: hidden;
+}
+/* Prevent scrolling when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+.toast-an{
+  position: fixed;
+  top: 100px; /* Adjust the top position as needed */
+  right: 20%;
+  transform: translateX(-50%);
+  z-index: 1000; /* Ensure the toast is above other content */
+  background-color: rgb(129, 11, 76);
+  color: white;
+}
+/* Hide page numbers when the search term is not empty */
+
+.search{
+  margin-left: 28px;
+  font-size: 18px;
+  font-weight: 400;
+}
+input{
+  padding: .5rem 2rem !important;
+  border: 1px solid;
+  border-color: seagreen;
+  outline: none;
+  margin-left: 8px;
+  border-radius: 30px;
+  padding: .5rem;
+}
+
+@media (max-width :767px) {
+  .cont{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+  }
+  input{
+    margin-top: .5rem;
+  }
+  .filter{
+    display: flex;
+    justify-content: center;
+  }
+}

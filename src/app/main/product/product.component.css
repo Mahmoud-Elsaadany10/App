@@ -1,0 +1,39 @@
+.card{
+  border-color: transparent;
+  transition: .3s;
+}
+.card-text{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.card-title{
+  height: 5rem;
+}
+/* .box-bottom{
+  margin-bottom: 1.5rem;
+  margin-left: 1.5rem;
+} */
+.btn{
+  background-color: white;
+  color: black;
+  border-color: gray;
+}
+.btn:hover{
+  background-color: gray;
+  color: white;
+}
+.card:hover{
+  box-shadow: 0px 4px 13px 9px #00000044;
+  transform: scale(1.05);
+}
+.toast-an{
+
+  position: fixed;
+  top: 100px; /* Adjust the top position as needed */
+  right: 20%;
+  transform: translateX(-50%);
+  z-index: 1000; /* Ensure the toast is above other content */
+  background-color: rgb(129, 11, 76);
+  color: white;
+}

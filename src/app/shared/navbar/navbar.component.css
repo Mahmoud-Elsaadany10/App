@@ -1,0 +1,25 @@
+.drt-row{
+  display: flex;
+  flex-direction: row !important;
+}
+@media (max-width : 767px) {
+
+}
+@media (min-width : 767px) {
+  .show{
+    display: none !important;
+  }
+}
+.logout{
+  cursor: pointer;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row{
+  padding: 0 !important;
+  width: 0 !important;
+}
+.search{
+  outline: none;
+  border-radius: 10px;
+ border: 1px solid salmon;
+}

@@ -1,0 +1,27 @@
+<div class="card" style="width: 16rem; border-color: #80808063;">
+  <img class="card-img-top" [src]="data.images" alt="Card image cap" style="height: 250px;">
+  <div class="card-body">
+    <h5 class="card-title d-flex w-100 justify-content-center align-items-center text-center">{{data.title}}</h5>
+    <p class="card-text">{{data.description}}</p>
+    <h6>{{data.price | currency}}</h6>
+  </div>
+  <div class="box-bottom d-flex flex-column justify-content-center align-items-center gap-3">
+    <button  (click)="sendData()" class="btn w-75">Add to cart</button>
+
+    <!-- Fixed: View Details Button opens the modal -->
+    <a class="btn btn-primary w-75 mb-3" role="button" (click)="openModal(data)">
+      View Details
+    </a>
+  </div>
+</div>
+
+<!-- NgbToast Notification -->
+<ngb-toast
+  *ngIf="showToast"
+  [autohide]="true"
+  [delay]="3000"
+  (hidden)="showToast = false"
+  class="toast-an"
+>
+  {{ toastMessage }}
+</ngb-toast>

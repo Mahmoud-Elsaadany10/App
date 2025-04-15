@@ -1,0 +1,9 @@
+<div class="stars">
+  <i *ngFor="let star of stars; let i = index"
+     class="fa-star"
+     [class.fas]="i < fullStars"
+     [class.fa-star-half-alt]="i === fullStars && hasHalfStar"
+     [class.far]="i >= fullStars + (hasHalfStar ? 1 : 0)"
+     (click)="rate(i + 1)">
+  </i>
+</div>

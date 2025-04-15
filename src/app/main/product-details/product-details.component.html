@@ -1,0 +1,20 @@
+<div class="modal-header">
+  <h5 class="modal-title">{{ product?.title }}</h5>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+</div>
+<div class="modal-body">
+  <div class="col-sm-12 col-lg-12 d-flex justify-content-center align-items-center">
+    <img [src]="product?.images" alt="Product Image" style="width: 250px; border-radius: 9px;">
+  </div>
+  <div class="col-sm-12 col-lg-12 mt-sm-3 mt-lg-0">
+    <h2>{{ product?.title }}</h2>
+    <div class="d-flex align-items-center">
+      <h5 class="me-2">Price: </h5>
+      <h6>{{ product?.price  }}</h6>
+    </div>
+    <div>
+      <h5>About this product:</h5>
+      <p>{{ product?.description }}</p>
+    </div>
+  </div>
+</div>

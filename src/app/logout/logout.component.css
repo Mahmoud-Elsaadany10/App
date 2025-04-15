@@ -1,0 +1,19 @@
+p{
+  font-size: large;
+
+}
+/* Position modal at the top of the screen */
+.top-modal .modal-dialog {
+  position: fixed;
+  top: 10px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  margin: 0;
+  z-index: 1055;
+}
+
+.top-modal .modal-content {
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
