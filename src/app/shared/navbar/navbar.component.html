@@ -1,8 +1,8 @@
 <div class="container-fluid bg-light shadow py-2 sticky-top">
   <nav class="navbar navbar-expand-lg navbar-light justify-content-between align-items-center container">
     <div>
-      <span class="navbar-brand hide show "  [hidden]="!showIcon" (click)="servIcon.changToggle(!Toggle)"><i class="fa-solid fa-bars"></i></span>
-      <a class="navbar-brand" routerLink="/user/home" >Navbar</a>
+      <span class="navbar-brand  hide show "  [hidden]="!showIcon" (click)="servIcon.changToggle(!Toggle)"><i class="fa-solid  fa-bars"></i></span>
+      <a class="navbar-brand" routerLink="/user/home" >Store</a>
     </div>
 
 
@@ -12,7 +12,7 @@
 
         <a  class="nav-item nav-link ms-3" routerLink="/user/carts" routerLinkActive="active" ><div [matBadge]="number" matBadgeOverlap="false" class="demo-section"><i class="fa-solid fa-cart-shopping"></i></div></a>
         <!-- <a class="nav-item nav-link me-3" href="#">Profile</a> -->
-        <a *ngIf="!islogging" class="nav-item nav-link ms-3" routerLink="/user/register" routerLinkActive="active">Register</a>
+        <a *ngIf="!islogging" class="nav-item nav-link ms-4" routerLink="/user/register" routerLinkActive="active">Register</a>
         <a *ngIf="!islogging" class="nav-item nav-link ms-3" routerLink="/user/login" routerLinkActive="active">Log In</a>
         <a *ngIf="islogging" (click)="openConfirmModal()" class="nav-item nav-link ms-4 logout"  routerLinkActive="active" >Log Out</a>
       </div>

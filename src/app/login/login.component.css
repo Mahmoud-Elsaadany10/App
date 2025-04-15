@@ -14,3 +14,10 @@
   background-color: rgb(129, 11, 76);
   color: white;
 }
+form{
+  padding: 2rem;
+  margin-top: 6rem;
+  background-color: #bd6325ad;
+  border-radius: 11px;
+
+}

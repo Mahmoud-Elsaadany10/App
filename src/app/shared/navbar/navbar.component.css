@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: row !important;
 }
+.fa-bars{
+  cursor: pointer;
+}
 @media (max-width : 767px) {
 
 }
@@ -9,6 +12,7 @@
   .show{
     display: none !important;
   }
+
 }
 .logout{
   cursor: pointer;

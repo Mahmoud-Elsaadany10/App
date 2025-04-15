@@ -4,3 +4,10 @@
   z-index: 66;
   transform: translate(0, -50%);
 }
+form{
+  padding: 2rem;
+  margin-top: 6rem;
+  background-color: #bd6325ad;
+  border-radius: 11px;
+
+}
