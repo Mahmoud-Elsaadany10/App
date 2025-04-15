@@ -25,17 +25,17 @@ export class LoginComponent {
       private router: Router
     ) {
       this.loginForm = this.fbulider.group({
-        username: ['', [Validators.required]], // Changed from 'Email' to 'username'
-        password: ['', Validators.required] // Changed from 'Password' to 'password'
+        username: ['', [Validators.required]],
+        password: ['', Validators.required]
       });
     }
 
     get username() {
-      return this.loginForm.get('username'); // Changed from 'Email' to 'username'
+      return this.loginForm.get('username');
     }
 
     get password() {
-      return this.loginForm.get('password'); // Changed from 'Password' to 'password'
+      return this.loginForm.get('password');
     }
 
     login() {
@@ -48,7 +48,7 @@ export class LoginComponent {
 
       this._auth.login(logUser).subscribe({
         next: (response) => {
-          if (response.accessToken) { // ✅ Check for token, not password
+          if (response.accessToken) {
             localStorage.setItem('token', response.accessToken);
             localStorage.setItem('role', "user");
             // this._auth.saveUser();
